@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const name = 'taotao';
+
+class Doc extends React.Component{
+  componentDidMount(){
+    document.title = name + "'s today"
+  }
+
+  render(){
+    return(
+      <div>
+        <h1>
+          I'm {name}, how are you today?
+        </h1>
+        <p>
+          sorry that I'm not currently able to use chinese. but that's not my intention since I'm purely chinese. all right, today I deployed this page, hoping more fun to come out very soon...
+        </p>
+      </div>
+    )
+  }
+}
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Doc/>,
   document.getElementById('root')
 );
 
