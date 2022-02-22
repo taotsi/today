@@ -16,9 +16,26 @@ class DontFight extends React.Component {
     return (
         <div>
           <br/><br/><br/><br/><br/>
-          <Grid verticalAlign="middle" columns={3}>
-            {this.render_buttons()}
-            {this.render_question()}
+          <Grid>
+            <Grid.Row columns={3}>
+              <Grid.Column only='computer'>
+              </Grid.Column>
+              <Grid.Column>
+                {this.render_buttons()}
+              </Grid.Column>
+              <Grid.Column only='computer'>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row columns={3}>
+              <Grid.Column only='computer'>
+              </Grid.Column>
+              <Grid.Column>
+                {this.render_question()}
+              </Grid.Column>
+              <Grid.Column only='computer'>
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </div>
     );
@@ -26,14 +43,11 @@ class DontFight extends React.Component {
 
   render_buttons() {
     return (
-        <Grid.Row>
-          <Grid.Column/>
-          <Grid.Column>
-            <Button circular icon="left chevron" floated="left" disabled={this.state.go_back_disabled} onClick={this.go_back.bind(this)}></Button>
-            <Button circular icon="refresh" floated="right" onClick={this.handle_refresh.bind(this)}></Button>
-          </Grid.Column>
-          <Grid.Column/>
-        </Grid.Row>
+        <div>
+          <Button circular icon="left chevron" floated="left" disabled={this.state.go_back_disabled}
+                  onClick={this.go_back.bind(this)}></Button>
+          <Button circular icon="refresh" floated="right" onClick={this.handle_refresh.bind(this)}></Button>
+        </div>
     );
   }
 
@@ -48,7 +62,7 @@ class DontFight extends React.Component {
       });
     }
 
-    if (history.length <= 1){
+    if (history.length <= 1) {
       this.setState({
         go_back_disabled: true
       });
@@ -69,17 +83,10 @@ class DontFight extends React.Component {
     }
 
     return (
-        <Grid.Row>
-          <Grid.Column/>
-          <Grid.Column textAlign="center">
-            <Grid.Row>
-              <Segment>
-                <h2>{this.state.current_question.text}</h2><br/>
-                {answers}
-              </Segment>
-            </Grid.Row>
-          </Grid.Column>
-        </Grid.Row>
+        <Segment textAlign='center'>
+          <h2>{this.state.current_question.text}</h2><br/>
+          {answers}
+        </Segment>
     );
   }
 
