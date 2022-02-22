@@ -16,28 +16,28 @@ class DontFight extends React.Component {
     return (
         <div>
           <br/><br/><br/><br/><br/>
-          <Grid>
-            <Grid.Row columns={3}>
-              <Grid.Column only='computer'>
-              </Grid.Column>
-              <Grid.Column>
-                {this.render_buttons()}
-              </Grid.Column>
-              <Grid.Column only='computer'>
-              </Grid.Column>
-            </Grid.Row>
-
-            <Grid.Row columns={3}>
-              <Grid.Column only='computer'>
-              </Grid.Column>
-              <Grid.Column>
-                {this.render_question()}
-              </Grid.Column>
-              <Grid.Column only='computer'>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+          {this.render_row(this.render_buttons())}
+          {this.render_row(this.render_question())}
         </div>
+    );
+  }
+
+  render_row(content) {
+    return (
+        <Grid>
+          <Grid.Row columns={3} only='computer'>
+            <Grid.Column></Grid.Column>
+            <Grid.Column>
+              {content}
+            </Grid.Column>
+            <Grid.Column></Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={1} only='mobile'>
+            <Grid.Column>
+              {content}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
     );
   }
 
