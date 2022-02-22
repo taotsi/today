@@ -5,28 +5,59 @@ import {Button, Segment, Grid} from 'semantic-ui-react';
 class DontFight extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { current_question: dont_fight.start };
+    this.state = {
+      current_question: dont_fight.start
+    };
   }
 
   render() {
+    return (
+        <div>
+          <br/><br/><br/><br/><br/>
+          <Grid verticalAlign='middle' columns={3}>
+            {this.render_buttons()}
+            {this.render_question()}
+          </Grid>
+        </div>
+    );
+  }
+
+  render_buttons() {
+    return (
+        <Grid.Row>
+          <Grid.Column/>
+          <Grid.Column>
+            <Button circular icon='refresh' floated="right" onClick={this.handle_refresh.bind(this)}></Button>
+          </Grid.Column>
+          <Grid.Column/>
+        </Grid.Row>
+    );
+  }
+
+  handle_refresh() {
+    this.setState({
+          current_question: dont_fight.start
+        }
+    );
+  }
+
+  render_question() {
     let answers = null;
     if ('a' in this.state.current_question) {
       answers = this.render_answers(this.state.current_question.a);
     }
     return (
-        <div>
-          <br/><br/><br/><br/><br/><br/><br/><br/>
-          <Grid verticalAlign='middle' columns={3}>
-            <Grid.Column/>
-            <Grid.Column textAlign='center'>
+        <Grid.Row>
+          <Grid.Column/>
+          <Grid.Column textAlign='center'>
+            <Grid.Row>
               <Segment>
-                <h2>{this.state.current_question.q}</h2><br/>
+                <h2>{this.state.current_question.text}</h2><br/>
                 {answers}
               </Segment>
-            </Grid.Column>
-            <Grid.Column/>
-          </Grid>
-        </div>
+            </Grid.Row>
+          </Grid.Column>
+        </Grid.Row>
     );
   }
 
@@ -62,7 +93,7 @@ class DontFight extends React.Component {
 
   errot_question() {
     return {
-      q: "程序出错了..."
+      text: "程序出错了..."
     }
   }
 }
