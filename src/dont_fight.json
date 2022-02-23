@@ -1,21 +1,253 @@
 {
-  "start": {
-    "text": "又闹矛盾了？",
-    "a": [
-      {
-        "text": "是啊...",
-        "direct": "text_angry"
-      },
-      {
-        "text": "没有呢",
-        "direct": "f_ok"
-      }
-    ]
-  },
-  "text_angry": {
-    "text": "..."
-  },
-  "f_ok": {
-    "text": "不错！保持下去"
-  }
+    "start": {
+        "text": "又闹矛盾了？",
+        "a": [
+            {
+                "text": "是啊...",
+                "direct": "are_you_angry"
+            },
+            {
+                "text": "没有呢",
+                "direct": "double_check_conflict"
+            }
+        ]
+    },
+    "TODO": {
+        "text": "待更新..."
+    },
+    "are_you_angry": {
+        "text": "还在生气中吗",
+        "a": [
+            {
+                "text": "嗯",
+                "direct": "calm_down_first"
+            },
+            {
+                "text": "不生气了",
+                "direct": "is_she_still_angry"
+            }
+        ]
+    },
+    "calm_down_first": {
+        "text": "建议你立马走开，去冷静一下。有些话说出来可就收不回去了",
+        "a": [
+            {
+                "text": "好的，我去冷静一下",
+                "direct": "have_you_calmed"
+            },
+            {
+                "text": "气死我了",
+                "direct": "warning"
+            }
+        ]
+    },
+    "warning": {
+        "text": "再警告你一次，即使错在对方，人在情绪不稳定时做的决定往往会后悔",
+        "a": [
+            {
+                "text": "我不后悔",
+                "direct": "do_you_love_her_anyway"
+            },
+            {
+                "text": "那怎么办",
+                "direct": "control_yourself"
+            }
+        ]
+    },
+    "do_you_love_her_anyway": {
+        "text": "问问自己，你还爱Ta吗？",
+        "a": [
+            {
+                "text": "爱",
+                "direct": "control_yourself"
+            },
+            {
+                "text": "我想我不爱了",
+                "direct": "pity"
+            }
+        ]
+    },
+    "pity": {
+        "text": "为你惋惜。爱不是件易事，愿你终有一日能懂得如何去爱"
+    },
+    "control_yourself": {
+        "text": "务必克制自己，纵使万般委屈，先努力冷静下来，发泄情绪解决不了任何问题，只会令问题恶化。如果场面实在失控，先走开一会儿",
+        "a": [
+            {
+                "text": "好的",
+                "direct": "have_you_calmed"
+            }
+        ]
+    },
+    "have_you_calmed": {
+        "text": "冷静下来了吗？",
+        "a": [
+            {
+                "text": "比较冷静了",
+                "direct": "is_she_still_angry"
+            },
+            {
+                "text": "还没",
+                "direct": "control_yourself"
+            }
+        ]
+    },
+    "is_she_still_angry": {
+        "text": "对方还在生气吗？冷静了吗？",
+        "a": [
+            {
+                "text": "还在生气啊，怎么办",
+                "direct": "comfort_her"
+            },
+            {
+                "text": "冷静下来了",
+                "direct": "TODO"
+            }
+        ]
+    },
+    "comfort_her": {
+        "text": "去安抚一下吧。该认错就认错，该哄就哄。稳定情绪是第一要务，其他事情都可以往后放",
+        "a": [
+            {
+                "text": "好的",
+                "direct": "is_she_still_angry"
+            },
+            {
+                "text": "越哄越生气啊，怎么办",
+                "direct": "she_gets_worse"
+            }
+        ]
+    },
+    "she_gets_worse": {
+        "text": "先努力安抚吧。但是要克制自己，如果没耐心了就暂时离开一小会儿",
+        "a": [
+            {
+                "text": "好的，我明白",
+                "direct": "is_she_still_angry"
+            }
+        ]
+    },
+    "double_check_conflict": {
+        "text": "真没闹矛盾？（旁边有个返回按钮，可以回到上一个问题哦）",
+        "a": [
+            {
+                "text": "呃...真没有",
+                "direct": "conflict_could_be_good"
+            },
+            {
+                "text": "其实有点小矛盾...",
+                "direct": "are_you_angry"
+            }
+        ]
+    },
+    "conflict_could_be_good": {
+        "text": "其实吵架有时不见得是坏事。总是不吵反而不是健康的关系",
+        "a": [
+            {
+                "text": "这我明白",
+                "direct": "keep_it_up"
+            },
+            {
+                "text": "哦？此话怎讲",
+                "direct": "everyone_is_unique"
+            }
+        ]
+    },
+    "keep_it_up": {
+        "text": "太棒了，你很聪明",
+        "a": [
+            {
+                "text": "谢谢，再见~",
+                "direct": "bye"
+            }
+        ]
+    },
+    "bye": {
+        "text": "下次再见咯"
+    },
+    "everyone_is_unique": {
+        "text": "没有两个人是完全相同的。即使把你完全复制一份，你的内心也能认识到：我是我，Ta是Ta。对吗？",
+        "a": [
+            {
+                "text": "对",
+                "direct": "to_know"
+            }
+        ]
+    },
+    "to_know": {
+        "text": "真正的爱情需要坦露内心，并按其本来面目去了解、尊重对方。对吗",
+        "a": [
+            {
+                "text": "对",
+                "direct": "conflict_essence"
+            }
+        ]
+    },
+    "conflict_essence": {
+        "text": "呐，这就是冲突的本源：两个独特的灵魂在尝试互相走进对方的内心。二人天然的差异必将导致冲突",
+        "a": [
+            {
+                "text": "所以经常吵架才是真爱吗？",
+                "direct": "misunderstanding"
+            }
+        ]
+    },
+    "misunderstanding": {
+        "text": "哈哈，很抱歉让你误解了。我们大多数的所谓冲突，其实是在避免真正的冲突。人们喜欢为一件件鸡毛蒜皮的事情争吵，而拒绝面对真正的冲突。",
+        "a": [
+            {
+                "text": "所以其实完全不吵架也是不健康的咯？",
+                "direct": "ignore_conflict"
+            }
+        ]
+    },
+    "ignore_conflict": {
+        "text": "说得对。完全不吵架是一种回避，一种怠惰。吵架不可怕，该吵的就要吵，而且要认真吵",
+        "a": [
+            {
+                "text": "吵架总归是一件可怕的事情",
+                "direct": "understand_conflict_again"
+            }
+        ]
+    },
+    "understand_conflict_again": {
+        "text": "你还是停留在\"浅层冲突\"的思维习惯中。而\"深层冲突\"，是一次感受彼此核心的存在、并从中汲取知识和力量的机会，这并不是坏事",
+        "a": [
+            {
+                "text": "明白了，那该如何做呢",
+                "direct": "face_conflict"
+            },
+            {
+                "text": "也许我是在害怕发现我们原来在内心深处并不合适吧",
+                "direct": "courage"
+            }
+        ]
+    },
+    "courage": {
+        "text": "这一点我不否认。正视深层冲突是一次机会，而机会常常伴随着风险。但爱是给勇敢的人准备的，对吗",
+        "a": [
+            {
+                "text": "说得对，那该如何正视呢",
+                "direct": "face_conflict"
+            }
+        ]
+    },
+    "face_conflict": {
+        "text": "坦白说，我自己并不成功。但我愿意跟你分享几条原则",
+        "a": [
+            {
+                "text": "请讲",
+                "direct": "principles"
+            }
+        ]
+    },
+    "principles": {
+        "text": "第一，要尊重对方，按其本来面目认识对方，否则就有些自恋的成分了。第二，要对自身敏感，感知到内心的情绪，努力找出其深层根源。这样就建立了相互坦露内心的前提",
+        "a": [
+            {
+                "text": "还有呢",
+                "direct": "TODO"
+            }
+        ]
+    }
 }
