@@ -15,14 +15,14 @@ class DontFight extends React.Component {
   render() {
     return (
         <div>
-          <br/><br/><br/><br/><br/>
-          {this.render_row(this.render_buttons())}
-          {this.render_row(this.render_question())}
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          {this.render_question_row(this.render_question())}
+          {this.render_operations_row(this.render_operations())}
         </div>
     );
   }
 
-  render_row(content) {
+  render_question_row(content) {
     return (
         <Grid>
           <Grid.Row columns={3} only='computer'>
@@ -41,12 +41,35 @@ class DontFight extends React.Component {
     );
   }
 
-  render_buttons() {
+  render_operations_row(content) {
+    return (
+        <Grid>
+          <Grid.Row columns={3} only='computer'>
+            <Grid.Column></Grid.Column>
+            <Grid.Column>
+              {content}
+            </Grid.Column>
+            <Grid.Column></Grid.Column>
+          </Grid.Row>
+          <Grid.Row only='mobile'>
+            <Grid.Column width={15}>
+              {content}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+    );
+  }
+
+  render_operations() {
     return (
         <div>
-          <Button circular icon="left chevron" floated="left" disabled={this.state.go_back_disabled}
-                  onClick={this.go_back.bind(this)}></Button>
-          <Button circular icon="refresh" floated="right" onClick={this.handle_refresh.bind(this)}></Button>
+          <Button circular icon="refresh" floated="right"
+                  onClick={this.handle_refresh.bind(this)}>
+          </Button>
+          <Button circular icon="left chevron" floated="right"
+                  disabled={this.state.go_back_disabled}
+                  onClick={this.go_back.bind(this)}>
+          </Button>
         </div>
     );
   }
@@ -84,7 +107,7 @@ class DontFight extends React.Component {
 
     return (
         <Segment textAlign='center'>
-          <h2>{this.state.current_question.text}</h2><br/>
+          <h3>{this.state.current_question.text}</h3><br/>
           {answers}
         </Segment>
     );
