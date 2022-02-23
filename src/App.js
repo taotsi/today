@@ -4,7 +4,7 @@ import DontFight from "./DontFight";
 
 class App extends React.Component {
   componentDidMount() {
-    document.title = "T's today"
+    document.title = "taotao today"
   }
   render() {
     return (
