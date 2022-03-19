@@ -2,7 +2,7 @@ import React from "react"
 import dont_fight from "./dont_fight.json"
 import {Button, Segment, Grid} from "semantic-ui-react";
 
-class DontFight extends React.Component {
+class QAScriptExecutor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -157,4 +157,4 @@ class DontFight extends React.Component {
   }
 }
 
-export default DontFight;
+export default QAScriptExecutor;

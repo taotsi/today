@@ -1,5 +1,5 @@
 import React from 'react';
-import DontFight from "./DontFight";
+import DontFight from "./QAScriptExecutor";
 
 
 class App extends React.Component {
