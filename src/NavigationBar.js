@@ -23,7 +23,7 @@ export default class NavigationBar extends React.Component {
           <Menu.Item
               name = "qa_script"
               onClick={this.handle_item_click}>
-            QA脚本测试
+            吵架急诊
           </Menu.Item>
         </Menu>
     )
