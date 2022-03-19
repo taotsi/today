@@ -10,6 +10,8 @@ export default class QAScriptExecutor extends React.Component {
       history: ["start"],
       go_back_disabled: true
     };
+    this.handle_refresh = this.handle_refresh.bind(this);
+    this.go_back = this.go_back.bind(this);
   }
 
   render() {
@@ -64,11 +66,11 @@ export default class QAScriptExecutor extends React.Component {
     return (
         <div>
           <Button circular icon="refresh" floated="right"
-                  onClick={this.handle_refresh.bind(this)}>
+                  onClick={this.handle_refresh}>
           </Button>
           <Button circular icon="left chevron" floated="right"
                   disabled={this.state.go_back_disabled}
-                  onClick={this.go_back.bind(this)}>
+                  onClick={this.go_back}>
           </Button>
         </div>
     );
