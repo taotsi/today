@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationBar from "./NavigationBar"
 import Homepage from "./HomePage"
 import QAScriptExecutor from "./QAScriptExecutor"
+import Anniversary from "./Anniversary"
 
 
 class App extends React.Component {
@@ -29,6 +30,8 @@ class App extends React.Component {
       page = <Homepage/>;
     } else if (this.state.selected_item === "qa_script") {
       page = <QAScriptExecutor/>;
+    } else if (this.state.selected_item === "anniversary") {
+      page = <Anniversary/>;
     } else {
       page = <p>error...</p>
     }

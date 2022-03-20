@@ -25,6 +25,11 @@ export default class NavigationBar extends React.Component {
               onClick={this.handle_item_click}>
             吵架急诊
           </Menu.Item>
+          <Menu.Item
+              name = "anniversary"
+              onClick={this.handle_item_click}>
+            纪念日
+          </Menu.Item>
         </Menu>
     )
   }
