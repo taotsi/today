@@ -1,3 +1,3 @@
 # Taotao's Today
 
-init
+a project for fun
