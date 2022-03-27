@@ -1,6 +1,7 @@
 import React from "react";
 import anniversaries from "./anniversaries.json";
-import { DateTime } from "luxon";
+import {DateTime} from "luxon";
+import { Outlet } from "react-router-dom";
 
 export default class Anniversary extends React.Component {
   render() {
@@ -27,9 +28,12 @@ export default class Anniversary extends React.Component {
       render_hit = hit.map(event => <p>{event.date.year}年，{event.years_elapsed}年前的今天，{event.event}</p>);
     }
 
-    return (<div>
-      <p>今天是{now.toISODate()}</p>
-      {render_hit}
-    </div>);
+    return (
+        <div>
+          <p>今天是{now.toISODate()}</p>
+          {render_hit}
+          <Outlet/>
+        </div>
+    );
   }
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import dont_fight from "./dont_fight.json"
 import {Button, Segment, Grid} from "semantic-ui-react";
+import { Outlet } from "react-router-dom";
 
 export default class QAScriptExecutor extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class QAScriptExecutor extends React.Component {
           <br/><br/><br/><br/><br/><br/><br/><br/><br/>
           {this.render_question_row(this.render_question())}
           {this.render_operations_row(this.render_operations())}
+          <Outlet/>
         </div>
     );
   }

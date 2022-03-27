@@ -4,10 +4,31 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomePage from "./HomePage"
+import QAScriptExecutor from "./QAScriptExecutor"
+import Anniversary from "./Anniversary"
 
 ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App/>}>
+            <Route index element={<HomePage/>}/>
+            <Route path="anniversary" element={<Anniversary/>}/>
+            <Route path="homepage" element={<HomePage/>}/>
+            <Route path="qa_robot" element={<QAScriptExecutor/>}/>
+            <Route
+                path="*"
+                element={
+                  <main style={{ padding: "1rem" }}>
+                    <p>There's nothing here!</p>
+                  </main>
+                }
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );

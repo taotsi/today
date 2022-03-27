@@ -1,5 +1,6 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
@@ -17,20 +18,28 @@ export default class NavigationBar extends React.Component {
         <Menu>
           <Menu.Item
             name = "homepage"
-            onClick={this.handle_item_click}>
+            as={Link}
+            to="/"
+          >
             主页
           </Menu.Item>
           <Menu.Item
               name = "qa_script"
-              onClick={this.handle_item_click}>
-            吵架急诊
+              as={Link}
+              to="qa_robot"
+          >
+            问答机器人
           </Menu.Item>
           <Menu.Item
               name = "anniversary"
-              onClick={this.handle_item_click}>
+              as={Link}
+              to="/anniversary"
+          >
             纪念日
           </Menu.Item>
         </Menu>
     )
   }
 }
+
+// export default withRouter(NavigationBar);
