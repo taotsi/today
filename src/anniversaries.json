@@ -4,7 +4,51 @@
         "date": "1990-06-13"
     },
     {
-        "event": "巴赫诞生",
+        "event": "Bach出生",
         "date": "1698-03-31"
+    },
+    {
+        "event": "Bach",
+        "date": "1750-07-28"
+    },
+    {
+        "event": "David Bowie出生",
+        "date": "1947-01-08"
+    },
+    {
+        "event": "David Bowie去世",
+        "date": "2016-01-10"
+    },
+    {
+        "event": "Aaron Swartz出生",
+        "date": "1986-11-08"
+    },
+    {
+        "event": "Aaron Swartz去世",
+        "date": "2013-01-11"
+    },
+    {
+        "event": "Eric Hobsbawm出生",
+        "date": "1917-06-09"
+    },
+    {
+        "event": "Eric Hobsbawm去世",
+        "date": "2012-10-01"
+    },
+    {
+        "event": "东德开放柏林墙",
+        "date": "1989-11-09"
+    },
+    {
+        "event": "苏联解体",
+        "date": "1991-12-25"
+    },
+    {
+        "event": "J.S.Mill出生",
+        "date": "1806-05-20"
+    },
+    {
+        "event": "J.S.Mill去世",
+        "date": "1873-05-08"
     }
 ]
