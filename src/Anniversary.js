@@ -15,7 +15,8 @@ export default class Anniversary extends React.Component {
       const interval = Interval.fromDateTimes(now, date_aligned);
       const days_till_next = Math.round(interval.length("days"));
       parsed.push({
-        date: date_aligned,
+        date_then: date_then,
+        date_aligned: date_aligned,
         years_elapsed: years_elapsed,
         event: item.event,
         days_till_next: days_till_next
@@ -35,7 +36,7 @@ export default class Anniversary extends React.Component {
   }
 
   render_event(event) {
-    return <List.Item>{event.date.year}年，{event.event}，至今已有{event.years_elapsed}年</List.Item>;
+    return <List.Item>{event.date_then.year}年，{event.event}，至今已有{event.years_elapsed}年</List.Item>;
   }
 
   render() {
@@ -53,7 +54,7 @@ export default class Anniversary extends React.Component {
       }
       if (ele.days_till_next < nearest_interval) {
         nearest_interval = ele.days_till_next;
-        nearest_date = ele.date;
+        nearest_date = ele.date_aligned;
       }
     }
 
