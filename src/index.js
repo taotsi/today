@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./HomePage"
 import QAScriptExecutor from "./QAScriptExecutor"
 import Anniversary from "./Anniversary"
+import BackendTest from "./BackendTest"
 import Error from "./Error"
 
 ReactDOM.render(
@@ -18,12 +19,13 @@ ReactDOM.render(
             <Route path="anniversary" element={<Anniversary/>}/>
             <Route path="homepage" element={<HomePage/>}/>
             <Route path="qa_robot" element={<QAScriptExecutor/>}/>
+            <Route path="backend_test" element={<BackendTest/>}/>
             <Route path="*" element={<Error/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
