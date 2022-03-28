@@ -1,5 +1,14 @@
 {
     "start": {
+        "text": "测试脚本：两口子吵架",
+        "a": [
+            {
+                "text": "OK",
+                "direct": "fight_again"
+            }
+        ]
+    },
+    "fight_again": {
         "text": "又闹矛盾了？",
         "a": [
             {
@@ -8,12 +17,9 @@
             },
             {
                 "text": "没有呢",
-                "direct": "double_check_conflict"
+                "direct": "conflict_could_be_good"
             }
         ]
-    },
-    "TODO": {
-        "text": "待更新..."
     },
     "are_you_angry": {
         "text": "还在生气中吗",
@@ -29,10 +35,10 @@
         ]
     },
     "calm_down_first": {
-        "text": "建议你立马走开，去冷静一下。有些话说出来可就收不回去了",
+        "text": "冷静下来，克制自己",
         "a": [
             {
-                "text": "好的，我去冷静一下",
+                "text": "我去冷静一下",
                 "direct": "have_you_calmed"
             },
             {
@@ -42,53 +48,18 @@
         ]
     },
     "warning": {
-        "text": "再警告你一次，即使错在对方，人在情绪不稳定时做的决定往往会后悔",
-        "a": [
-            {
-                "text": "我不后悔",
-                "direct": "do_you_love_her_anyway"
-            },
-            {
-                "text": "那怎么办",
-                "direct": "control_yourself"
-            }
-        ]
-    },
-    "do_you_love_her_anyway": {
-        "text": "问问自己，你还爱Ta吗？",
-        "a": [
-            {
-                "text": "爱",
-                "direct": "control_yourself"
-            },
-            {
-                "text": "我想我不爱了",
-                "direct": "pity"
-            }
-        ]
-    },
-    "pity": {
-        "text": "为你惋惜。爱不是件易事，愿你终有一日能懂得如何去爱"
-    },
-    "control_yourself": {
-        "text": "务必克制自己，纵使万般委屈，先努力冷静下来，发泄情绪解决不了任何问题，只会令问题恶化。如果场面实在失控，先走开一会儿",
-        "a": [
-            {
-                "text": "好的",
-                "direct": "have_you_calmed"
-            }
-        ]
+        "text": "你是成年人了，要为自己的行为负责。不管多生气，总之要记得，有些话一旦说出来就收不回去了"
     },
     "have_you_calmed": {
         "text": "冷静下来了吗？",
         "a": [
             {
-                "text": "比较冷静了",
+                "text": "冷静了",
                 "direct": "is_she_still_angry"
             },
             {
                 "text": "还没",
-                "direct": "control_yourself"
+                "direct": "calm_down_first"
             }
         ]
     },
@@ -96,47 +67,24 @@
         "text": "对方还在生气吗？冷静了吗？",
         "a": [
             {
-                "text": "还在生气啊，怎么办",
+                "text": "还气着呢，怎么办",
                 "direct": "comfort_her"
             },
             {
                 "text": "冷静下来了",
-                "direct": "TODO"
+                "direct": "compromise"
             }
         ]
     },
+    "compromise": {
+        "text": "要好好相处。爱从来不是为胆小鬼准备的"
+    },
     "comfort_her": {
-        "text": "去安抚一下吧。该认错就认错，该哄就哄。稳定情绪是第一要务，其他事情都可以往后放",
+        "text": "哄一哄吧，你不哄谁哄呢",
         "a": [
             {
                 "text": "好的",
                 "direct": "is_she_still_angry"
-            },
-            {
-                "text": "越哄越生气啊，怎么办",
-                "direct": "she_gets_worse"
-            }
-        ]
-    },
-    "she_gets_worse": {
-        "text": "先努力安抚吧。但是要克制自己，如果没耐心了就暂时离开一小会儿",
-        "a": [
-            {
-                "text": "好的，我明白",
-                "direct": "is_she_still_angry"
-            }
-        ]
-    },
-    "double_check_conflict": {
-        "text": "真没闹矛盾？（旁边有个返回按钮，可以回到上一个问题哦）",
-        "a": [
-            {
-                "text": "呃...真没有",
-                "direct": "conflict_could_be_good"
-            },
-            {
-                "text": "其实有点小矛盾...",
-                "direct": "are_you_angry"
             }
         ]
     },
@@ -144,29 +92,13 @@
         "text": "其实吵架有时不见得是坏事。总是不吵反而不是健康的关系",
         "a": [
             {
-                "text": "这我明白",
-                "direct": "keep_it_up"
-            },
-            {
                 "text": "哦？此话怎讲",
                 "direct": "everyone_is_unique"
             }
         ]
     },
-    "keep_it_up": {
-        "text": "太棒了，你很聪明",
-        "a": [
-            {
-                "text": "谢谢，再见~",
-                "direct": "bye"
-            }
-        ]
-    },
-    "bye": {
-        "text": "下次再见咯"
-    },
     "everyone_is_unique": {
-        "text": "没有两个人是完全相同的。即使把你完全复制一份，你的内心也能认识到：我是我，Ta是Ta。对吗？",
+        "text": "没有两个人是完全相同的。即使把你完全复制一份，你的内心也能认识到：我是我，他是他。对吗？",
         "a": [
             {
                 "text": "对",
@@ -196,8 +128,12 @@
         "text": "哈哈，很抱歉让你误解了。我们大多数的所谓冲突，其实是在避免真正的冲突。人们喜欢为一件件鸡毛蒜皮的事情争吵，而拒绝面对真正的冲突。",
         "a": [
             {
-                "text": "所以其实完全不吵架也是不健康的咯？",
+                "text": "所以完全不吵架也是不健康的咯？",
                 "direct": "ignore_conflict"
+            },
+            {
+                "text": "真正的冲突是什么？",
+                "direct": "to_know"
             }
         ]
     },
@@ -246,8 +182,11 @@
         "a": [
             {
                 "text": "还有呢",
-                "direct": "TODO"
+                "direct": "thats_all_for_now"
             }
         ]
+    },
+    "thats_all_for_now": {
+        "text": "我就知道这么多了。也许你可以教教我"
     }
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import dont_fight from "./dont_fight.json"
+import qa_script from "./qa_script.json"
 import {Button, Segment, Grid} from "semantic-ui-react";
 import { Outlet } from "react-router-dom";
 
@@ -7,7 +7,7 @@ export default class QAScriptExecutor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current_question: dont_fight.start,
+      current_question: qa_script.start,
       history: ["start"],
       go_back_disabled: true
     };
@@ -84,7 +84,7 @@ export default class QAScriptExecutor extends React.Component {
     if (this.state.history.length > 1) {
       history.pop();
       this.setState({
-        current_question: dont_fight[history[history.length - 1]],
+        current_question: qa_script[history[history.length - 1]],
         history: history
       });
     }
@@ -98,7 +98,7 @@ export default class QAScriptExecutor extends React.Component {
 
   handle_refresh() {
     this.setState({
-      current_question: dont_fight.start,
+      current_question: qa_script.start,
       history: ["start"]
     });
   }
@@ -134,8 +134,8 @@ export default class QAScriptExecutor extends React.Component {
 
   handle_choose(direct) {
     let new_question;
-    if (direct in dont_fight) {
-      new_question = dont_fight[direct];
+    if (direct in qa_script) {
+      new_question = qa_script[direct];
       this.setState({
         history: [...this.state.history, direct],
         go_back_disabled: false
