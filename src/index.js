@@ -8,6 +8,7 @@ import HomePage from "./home_page/HomePage"
 import QAScriptExecutor from "./qa_executor/QAScriptExecutor"
 import Anniversary from "./anniversary/Anniversary"
 import BackendTest from "./backend_test/BackendTest"
+import DevelopmentLog from "./development_log/DevelopmentLog"
 import Error from "./common/Error"
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Route path="homepage" element={<HomePage/>}/>
             <Route path="qa_robot" element={<QAScriptExecutor/>}/>
             <Route path="backend_test" element={<BackendTest/>}/>
+            <Route path="development_log" element={<DevelopmentLog/>}></Route>
             <Route path="*" element={<Error/>}/>
           </Route>
         </Routes>

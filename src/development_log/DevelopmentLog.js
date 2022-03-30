@@ -1,9 +1,10 @@
 import React from "react"
 import {Outlet} from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
-import content_file from "./home.md"
+import content_file from "./log.md"
 
-export default class HomePage extends React.Component {
+// TODO: abstract a MarkDownPage, to merge this class and HomePage
+export default class DevelopmentLog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};

@@ -44,6 +44,13 @@ export default class NavigationBar extends React.Component {
           >
             后端测试
           </Menu.Item>
+          <Menu.Item
+              name="development_log"
+              as={Link}
+              to="/development_log"
+          >
+            开发日志
+          </Menu.Item>
         </Menu>
     )
   }
