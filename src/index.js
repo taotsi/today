@@ -4,11 +4,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomePage from "./HomePage"
-import QAScriptExecutor from "./QAScriptExecutor"
-import Anniversary from "./Anniversary"
-import BackendTest from "./BackendTest"
-import Error from "./Error"
+import HomePage from "./home_page/HomePage"
+import QAScriptExecutor from "./qa_executor/QAScriptExecutor"
+import Anniversary from "./anniversary/Anniversary"
+import BackendTest from "./backend_test/BackendTest"
+import Error from "./common/Error"
 
 ReactDOM.render(
     <React.StrictMode>

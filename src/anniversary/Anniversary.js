@@ -13,7 +13,7 @@ export default class Anniversary extends React.Component {
       const years_elapsed = now.year - date_then.year;
       const date_aligned = this.align_date(date_then, now);
       const interval = Interval.fromDateTimes(now, date_aligned);
-      const days_till_next = Math.round(interval.length("days"));
+      const days_till_next = Math.floor(interval.length("days")) + 1;
       parsed.push({
         date_then: date_then,
         date_aligned: date_aligned,
