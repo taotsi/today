@@ -1,27 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomePage from "./home_page/HomePage"
-import QAScriptExecutor from "./qa_executor/QAScriptExecutor"
-import Anniversary from "./anniversary/Anniversary"
-import BackendTest from "./backend_test/BackendTest"
-import DevelopmentLog from "./development_log/DevelopmentLog"
-import Error from "./common/Error"
+
+import MarkdownPage from "./common/MarkdownPage";
+import QaRobot from "./qa_executor/QaRobot";
+import Anniversary from "./anniversary/Anniversary";
+import BackendTest from "./backend_test/BackendTest";
+import Error from "./common/Error";
+import App from "./App";
+
+function Log() {
+  return <MarkdownPage url="/md/log.md"/>;
+}
+
+function Home() {
+  return <MarkdownPage url="/md/home.md"/>;
+}
 
 ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App/>}>
-            <Route index element={<HomePage/>}/>
+            <Route index element={<Home/>}/>
             <Route path="anniversary" element={<Anniversary/>}/>
-            <Route path="homepage" element={<HomePage/>}/>
-            <Route path="qa_robot" element={<QAScriptExecutor/>}/>
+            <Route path="qa_robot" element={<QaRobot/>}/>
             <Route path="backend_test" element={<BackendTest/>}/>
-            <Route path="development_log" element={<DevelopmentLog/>}></Route>
+            <Route path="dev_log" element={<Log/>}/>
             <Route path="*" element={<Error/>}/>
           </Route>
         </Routes>

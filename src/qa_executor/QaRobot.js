@@ -1,9 +1,9 @@
-import React from "react"
-import qa_script from "./qa_script.json"
-import {Button, Segment, Grid} from "semantic-ui-react";
-import { Outlet } from "react-router-dom";
+import React from "react";
+import qa_script from "./qa_script.json";
+import {Button, Grid, Segment} from "semantic-ui-react";
+import {Outlet} from "react-router-dom";
 
-export default class QAScriptExecutor extends React.Component {
+export default class QaRobot extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

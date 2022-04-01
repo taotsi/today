@@ -1,8 +1,8 @@
 import React from "react";
-import { Header, List } from 'semantic-ui-react'
+import {Header, List} from 'semantic-ui-react';
 import anniversaries from "./anniversaries.json";
-import { DateTime, Interval } from "luxon";
-import { Outlet } from "react-router-dom";
+import {DateTime, Interval} from "luxon";
+import {Outlet} from "react-router-dom";
 
 export default class Anniversary extends React.Component {
   parse_anniversaries(now) {
