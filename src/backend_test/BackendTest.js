@@ -11,7 +11,6 @@ export default class BackendTest extends React.Component {
     } else if (process.env.NODE_ENV === "production") {
       backend_host = "https://taotao.today";
     }
-    console.log(process.env.NODE_ENV);
     this.state = {
       backend_host: backend_host
     };
