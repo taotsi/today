@@ -1,21 +1,28 @@
 import React from "react";
 import {Outlet} from "react-router-dom";
+import {default as axios} from "axios";
 
 export default class BackendTest extends React.Component {
   constructor(props) {
     super(props);
+    let backend_host = "";
+    if (process.env.NODE_ENV === "development") {
+      backend_host = "http://localhost";
+    } else if (process.env.NODE_ENV === "production") {
+      backend_host = "https://taotao.today";
+    }
+    console.log(process.env.NODE_ENV);
+    this.state = {
+      backend_host: backend_host
+    };
+  }
 
-    let response_text = "";
-    const axios = require('axios').default;
-    axios.get('/hello')
-        .then(function (response) {
-          response_text = response;
-          console.log(response);
+  componentDidMount() {
+    axios.get(this.state.backend_host + "/api/hello")
+        .then(response => {
+          this.setState({text: response.data});
         })
         .catch(error => console.log(error));
-    this.state = {
-      "text": response_text
-    }
   }
 
   render() {
