@@ -32,6 +32,9 @@ anyway，它可以工作了。
 
 - [x] poc
 - [ ] rust下的爬虫
-- [ ] rust下的持久层
+  - [ ] http client, crate: reqwest
+  - [ ] html parser
+  - [ ] html data extractor
+- [ ] 持久层，sql or file based?
   - [ ] 持久层的备份
-- [ ] 前端chart可视化
+- [ ] 可视化
