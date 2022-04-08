@@ -21,9 +21,6 @@ class App extends React.Component {
             <Menu.Item name="anniversary" as={Link} to="/anniversary">
               纪念日
             </Menu.Item>
-            <Menu.Item name="backend_test" as={Link} to="/backend_test">
-              后端测试
-            </Menu.Item>
             <Menu.Item name="dev_log" as={Link} to="/dev_log">
               开发日志
             </Menu.Item>

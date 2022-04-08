@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
-import 'semantic-ui-css/semantic.min.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+import "semantic-ui-css/semantic.min.css";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import MarkdownPage from "./common/MarkdownPage";
 import QaRobot from "./qa_executor/QaRobot";
 import Anniversary from "./anniversary/Anniversary";
-import BackendTest from "./backend_test/BackendTest";
 import Error from "./common/Error";
 import App from "./App";
 
@@ -27,7 +26,6 @@ ReactDOM.render(
             <Route index element={<Home/>}/>
             <Route path="anniversary" element={<Anniversary/>}/>
             <Route path="qa_robot" element={<QaRobot/>}/>
-            <Route path="backend_test" element={<BackendTest/>}/>
             <Route path="dev_log" element={<Log/>}/>
             <Route path="*" element={<Error/>}/>
           </Route>

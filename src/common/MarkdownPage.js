@@ -1,6 +1,7 @@
 import React from "react"
 import {Outlet} from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from "remark-gfm";
 import axios from "axios";
 
 export default class MarkdownPage extends React.Component {
@@ -22,7 +23,7 @@ export default class MarkdownPage extends React.Component {
   render() {
     return (
         <div>
-          <ReactMarkdown>{this.state.content}</ReactMarkdown>
+          <ReactMarkdown children={this.state.content} remarkPlugins={[remarkGfm]}/>
           <Outlet/>
         </div>
     );
