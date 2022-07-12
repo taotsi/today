@@ -18,12 +18,17 @@ function Home() {
   return <MarkdownPage url="/md/home.md"/>;
 }
 
+function Guitar() {
+  return <MarkdownPage url="/md/guitar.md"/>;
+}
+
 ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App/>}>
             <Route index element={<Home/>}/>
+            <Route path="guitar" element={<Guitar/>}></Route>
             <Route path="anniversary" element={<Anniversary/>}/>
             <Route path="qa_robot" element={<QaRobot/>}/>
             <Route path="dev_log" element={<Log/>}/>

@@ -15,15 +15,18 @@ class App extends React.Component {
             <Menu.Item name="homepage" as={Link} to="/">
               主页
             </Menu.Item>
-            <Menu.Item name="qa_script" as={Link} to="qa_robot">
-              问答机器人
+            <Menu.Item name={"guitar"} as={Link} to="/guitar">
+              吉他课
             </Menu.Item>
+            {/*<Menu.Item name="qa_script" as={Link} to="qa_robot">*/}
+            {/*  问答机器人*/}
+            {/*</Menu.Item>*/}
             <Menu.Item name="anniversary" as={Link} to="/anniversary">
               纪念日
             </Menu.Item>
-            <Menu.Item name="dev_log" as={Link} to="/dev_log">
-              开发日志
-            </Menu.Item>
+            {/*<Menu.Item name="dev_log" as={Link} to="/dev_log">*/}
+            {/*  开发日志*/}
+            {/*</Menu.Item>*/}
           </Menu>
           <Outlet/>
         </div>
